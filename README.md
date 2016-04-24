@@ -1,2 +1,2 @@
 # OpticalixMvpTemplate
-For private use.
+For Opticalix private use.
