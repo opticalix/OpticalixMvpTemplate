@@ -18,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        //本地unit test 屏蔽依赖android-framework的错误
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {

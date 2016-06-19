@@ -6,7 +6,6 @@ package com.felix.opticalixmvptemplate.utils;
 
 import android.util.Log;
 
-import com.opticalix.opticalixtemplate.BaseApplication;
 
 
 /**
@@ -22,7 +21,7 @@ public class LogUtils {
     }
 
     public static boolean isDebug = true;// 是否需要打印bug，可以在application的onCreate函数里面初始化
-    private static final String TAG = BaseApplication.getAppShortName();
+    private static final String TAG = "LogUtils";
     private static String prefix = "";
 
     // 下面四个是默认tag的函数
@@ -53,33 +52,75 @@ public class LogUtils {
 
     // 下面是传入自定义tag的函数
     public static void i(Object object, String msg) {
-        if (isDebug)
-            Log.i(object.getClass().getSimpleName(), prefix + msg);
+        if (isDebug) {
+            String tag;
+            if(object instanceof String){
+                tag = (String) object;
+            }else{
+                tag = object.getClass().getSimpleName();
+            }
+            Log.i(tag, prefix + msg);
+        }
     }
 
     public static void d(Object object, String msg) {
-        if (isDebug)
-            Log.d(object.getClass().getSimpleName(), prefix + msg);
+        if (isDebug) {
+            String tag;
+            if(object instanceof String){
+                tag = (String) object;
+            }else{
+                tag = object.getClass().getSimpleName();
+            }
+            Log.d(tag, prefix + msg);
+        }
     }
 
     public static void e(Object object, String msg) {
-        if (isDebug)
-            Log.e(object.getClass().getSimpleName(), prefix + msg);
+        if (isDebug) {
+            String tag;
+            if(object instanceof String){
+                tag = (String) object;
+            }else{
+                tag = object.getClass().getSimpleName();
+            }
+            Log.e(tag, prefix + msg);
+        }
     }
 
     public static void e(Object object, String msg, Throwable e) {
-        if (isDebug)
-            Log.e(object.getClass().getSimpleName(), prefix + msg, e);
+        if (isDebug) {
+            String tag;
+            if(object instanceof String){
+                tag = (String) object;
+            }else{
+                tag = object.getClass().getSimpleName();
+            }
+            Log.e(tag, prefix + msg, e);
+        }
     }
 
     public static void w(Object object, String msg) {
-        if (isDebug)
-            Log.w(object.getClass().getSimpleName(), prefix + msg);
+        if (isDebug) {
+            String tag;
+            if(object instanceof String){
+                tag = (String) object;
+            }else{
+                tag = object.getClass().getSimpleName();
+            }
+            Log.w(tag, prefix + msg);
+        }
     }
 
     public static void v(Object object, String msg) {
-        if (isDebug)
-            Log.v(object.getClass().getSimpleName(), prefix + msg);
+        if (isDebug) {
+            String tag;
+            if(object instanceof String){
+                tag = (String) object;
+            }else{
+                tag = object.getClass().getSimpleName();
+            }
+            Log.v(tag, prefix + msg);
+        }
     }
 
 
@@ -106,4 +147,5 @@ public class LogUtils {
             Log.d(o.getClass().getSimpleName(), stringBuilder.toString());
         }
     }
+
 }
